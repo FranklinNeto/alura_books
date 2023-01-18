@@ -1,14 +1,14 @@
 import logo from "../../download-imagens/logo.svg";
-import "./styles.css";
+import { ContainerLogo } from "./styles";
 
 function Logo() {
   return (
-    <div className="logo">
-      <img src={logo} alt="Logo da empresa" className="logo-img" />
+    <ContainerLogo>
+      <img src={logo} alt="Logo da empresa" />
       <p>
         <strong>Alura Books</strong>
       </p>
-    </div>
+    </ContainerLogo>
   );
 }
 

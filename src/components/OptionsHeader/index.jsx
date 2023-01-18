@@ -1,14 +1,16 @@
+import { ContainerOptions } from "./styles";
+
 function OptionsHeader() {
   const textOptions = ["CATEGORIAS", "MINHA ESTANTE", "FAVORITOS"];
 
   return (
-    <ul className="options">
+    <ContainerOptions>
       {textOptions.map((option) => (
-        <li className="option">
+        <li>
           <p>{option}</p>
         </li>
       ))}
-    </ul>
+    </ContainerOptions>
   );
 }
 

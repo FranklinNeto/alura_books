@@ -1,17 +1,18 @@
 import perfil from "../../download-imagens/perfil.svg";
 import sacola from "../../download-imagens/sacola.svg";
+import { ContainerIcons } from "./styles";
 
 function IconsHeader() {
   const icons = [perfil, sacola];
 
   return (
-    <ul className="icons">
+    <ContainerIcons>
       {icons.map((icon) => (
-        <li className="icon">
+        <li>
           <img src={icon} alt="icone" />
         </li>
       ))}
-    </ul>
+    </ContainerIcons>
   );
 }
 

@@ -1,17 +1,15 @@
-import "./App.css";
-import Logo from "./components/Logo";
-import OptionsHeader from "./components/OptionsHeader";
-import IconsHeader from "./components/IconsHeader";
+import Header from "./components/Header";
+import Global from "./styles/global.js";
+import { AppContainer } from "./styles/AppContainer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Logo />
-        <OptionsHeader />
-        <IconsHeader />
-      </header>
-    </div>
+    <>
+      <Global />
+      <AppContainer>
+        <Header />
+      </AppContainer>
+    </>
   );
 }
 
