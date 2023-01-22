@@ -2,17 +2,15 @@ import { Input } from "../Input/styles";
 import { SearchContainer } from "./styles";
 import { Title } from "./styles";
 import { Subtitle } from "./styles";
-import { useState } from "react";
+
 import booksDatabase from "./booksDatabase";
+import BookList from "../BookList";
 
-function Search() {
-  const [inputSearch, setInputSearch] = useState([]);
-  console.log(inputSearch);
-
+function Search({ inputSearch, setInputSearch }) {
   return (
     <SearchContainer>
       <Title>Já sabe por onde começar?</Title>
-      <Subtitle>Encontre seu livro em nossa estante</Subtitle>;
+      <Subtitle>Encontre seu livro em nossa estante</Subtitle>
       <Input
         placeholder="Escreva sua proxima leitura"
         onBlur={(event) => {
@@ -21,9 +19,19 @@ function Search() {
           const filteredBook = booksDatabase.filter((book) =>
             book.nome.toLowerCase().includes(text)
           );
-          setInputSearch(filteredBook);
+
+          if (filteredBook.length === 0 || text === "") {
+            setInputSearch([]);
+          } else {
+            setInputSearch(filteredBook);
+          }
         }}
       />
+      <ul>
+        {inputSearch.map((book) => (
+          <BookList key={book.id} book={book} />
+        ))}
+      </ul>
     </SearchContainer>
   );
 }

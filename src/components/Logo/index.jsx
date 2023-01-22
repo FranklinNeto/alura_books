@@ -4,7 +4,10 @@ import { ContainerLogo } from "./styles";
 function Logo() {
   return (
     <ContainerLogo>
+      {/*  <figure> */}
       <img src={logo} alt="Logo da empresa" />
+      {/* </figure> */}
+
       <p>
         <strong>Alura Books</strong>
       </p>
